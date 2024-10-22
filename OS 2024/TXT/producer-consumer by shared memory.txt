@@ -1,0 +1,17 @@
+my_list = []
+
+num_elements = int(input("Enter number of elements(buffer size):"))
+
+for i in range(num_elements):
+    user_input = input(f"Enter element {i + 1}: ")
+   
+    my_list.append(user_input)
+
+print("Final list:", my_list)
+
+if my_list:
+    while my_list:
+        removed_element = my_list.pop()
+        print(f"Removed element from the end: {removed_element}")
+else:
+    print("List is empty.")

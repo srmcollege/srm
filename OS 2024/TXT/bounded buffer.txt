@@ -1,0 +1,48 @@
+import threading,time,random
+size=4
+buffer=[]
+empty=threading.Semaphore(size)
+full=threading.Semaphore(0)
+mutex=threading.Semaphore(1)
+
+class Producer(threading.Thread):
+    def run(self):
+        global buffer,empty,full,mutex
+        while 1:
+            item=random.randint(1,10)
+            empty.acquire()
+            mutex.acquire()
+            buffer.append(item)
+            print("Produced {}. Buffer: {}".format(item,buffer))
+            mutex.release()
+            full.release()
+            time.sleep(random.random()*2)
+
+class Consumer(threading.Thread):
+    def run(self):
+        global buffer,empty,full,mutex
+        while 1:
+            full.acquire()
+            mutex.acquire()
+            item=buffer.pop()
+            print("Consumed {}. Buffer {}".format(item,buffer))
+            mutex.release()
+            empty.release()
+            time.sleep(random.random()*3)
+
+if __name__=="__main__":
+    processesducers=2
+    num_consumers=3
+
+    producers=[Producer() for _ in range(processesducers)]
+    consumers=[Consumer() for _ in range(num_consumers)]
+
+    for producer in producers:
+        producer.start()
+    for consumer in consumers:
+        consumer.start()
+
+    for producer in producers:
+        producer.join()
+    for consumer in consumers:
+        consumer.join()

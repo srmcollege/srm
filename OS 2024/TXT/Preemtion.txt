@@ -1,0 +1,21 @@
+# Preemptive Scheduling Example (Round Robin style)
+processes = ['P1', 'P2', 'P3']
+burst_time = [5, 3, 4]
+time_quantum = 2
+remaining_burst_time = burst_time[:]
+time = 0
+
+while True:
+    all_done = True
+    for i in range(len(processes)):
+        if remaining_burst_time[i] > 0:
+            all_done = False
+            exec_time = min(remaining_burst_time[i], time_quantum)
+            remaining_burst_time[i] -= exec_time
+            time += exec_time
+            print(f"{processes[i]} executed for {exec_time} ms; Remaining time: {remaining_burst_time[i]} ms")
+    
+    if all_done:  # All processes are completed
+        break
+
+print("All processes completed.")
