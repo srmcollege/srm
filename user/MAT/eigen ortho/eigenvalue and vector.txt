@@ -1,0 +1,26 @@
+import numpy as np
+
+def calculate_eigen(matrix):
+    eigenvalues, eigenvectors = np.linalg.eig(matrix)
+    return eigenvalues, eigenvectors
+
+order = int(input("Enter the order of the matrix (2 or 3): "))
+
+if order not in [2, 3]:
+    print("Please enter a valid order (2 or 3).")
+else:
+    matrix = []
+    for i in range(order):
+        row = list(map(float, input(f"Enter row {i + 1} (space-separated values): ").split()))
+        if len(row) != order:
+            print(f"Row {i + 1} must have exactly {order} elements.")
+            break
+        matrix.append(row)
+    else:  # This else executes if the loop completes without a break
+        matrix = np.array(matrix)
+        eigenvalues, eigenvectors = calculate_eigen(matrix)
+        
+        print("Eigenvalues:")
+        print(eigenvalues)
+        print("Eigenvectors:")
+        print(eigenvectors)

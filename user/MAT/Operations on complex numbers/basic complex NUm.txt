@@ -1,0 +1,25 @@
+# Define two complex numbers
+x = 1 + 3j
+y = 2 - 5j
+
+# Addition
+add_result = x + y
+print("Addition:", add_result)
+
+# Subtraction
+sub_result = x - y
+print("Subtraction:", sub_result)
+
+# Multiplication
+mul_result = x * y
+print("Multiplication:", mul_result)
+
+# Division
+div_result = x / y
+print("Division:", div_result)
+
+# Modulus (Absolute value of complex numbers)
+mod_x = abs(x)
+mod_y = abs(y)
+print("Modulus of x:", mod_x)
+print("Modulus of y:", mod_y)

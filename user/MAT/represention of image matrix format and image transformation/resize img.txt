@@ -1,0 +1,13 @@
+from PIL import Image
+import numpy as np
+
+image_path = r"C:\Users\Public\linear.jpg"
+x = Image.open(image_path)
+x.show()
+
+resized_image = x.resize((200, 200))
+resized_image.show()
+
+resized_matrix = np.array(resized_image)
+print("Resized Matrix Representation:")
+print(resized_matrix)

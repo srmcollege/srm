@@ -1,0 +1,25 @@
+from PIL import Image, ImageChops
+
+image_path1 = r"C:\Users\Public\linear.jpg"
+image_path2 = r"C:\Users\Public\another_image.jpg"  # Change this to your second image
+
+x = Image.open(image_path1)
+y = Image.open(image_path2)
+
+x.show()
+y.show()
+
+inverted_x = ImageChops.invert(x)
+inverted_y = ImageChops.invert(y)
+
+inverted_x.show()
+inverted_y.show()
+
+inverted_x_matrix = np.array(inverted_x)
+inverted_y_matrix = np.array(inverted_y)
+
+print("Inverted Image 1 Matrix Representation:")
+print(inverted_x_matrix)
+
+print("Inverted Image 2 Matrix Representation:")
+print(inverted_y_matrix)

@@ -1,0 +1,13 @@
+from PIL import Image
+import numpy as np
+
+image_path = r"C:\Users\Public\linear.jpg"
+x = Image.open(image_path)
+x.show()
+
+image_mode = x.mode
+print("Image Mode:", image_mode)
+
+c = np.array(x)
+print("Matrix Representation:")
+print(c)

@@ -1,0 +1,74 @@
+#Practical no 4 
+
+#Matrices & Properties
+
+#identity matrix
+import numpy as np
+import numpy.matlib
+identity_matrix=np.identity(2)
+    #identity_matrix=np.identity(4)
+print("Identity Matrix : \n",identity_matrix)
+
+#digonal matrix
+import numpy as np
+import numpy.matlib
+digonal_matrix=np.diag([1,2,3,4])
+print("Digonal Matrix : \n",digonal_matrix)
+
+#transpose matrix
+import numpy as np
+import numpy.matlib
+matrix=[[1,2,3],
+        [4,5,6],
+        [7,8,9]]
+transpose_matrix=np.transpose(matrix)
+print("Transpose Matrix : \n",transpose_matrix)
+
+
+#Addition of matrix using numpy
+import numpy as np
+import numpy.matlib
+print("First matrix :")
+#first_mat=np.mat('1,2,9;4,5,6;4,8,9')
+first_mat=np.array([[1,2,9],[4,5,6],[4,8,9]])
+print(first_mat)
+print(" ")
+print("Second matrix :")
+second_mat=np.mat('9,3,7;6,9,4;7,2,1')
+print(second_mat)
+print(" ")
+print("Addition of matrix :")
+print(np.add(first_mat,second_mat))
+
+#Subtraction of matrix using numpy
+import numpy as np
+import numpy.matlib
+print("First matrix :")
+first_mat=np.mat('1,2,9;4,5,6;4,8,9')
+print(first_mat)
+print(" ")
+print("Second matrix :")
+second_mat=np.mat('9,3,7;6,9,4;7,2,1')
+print(second_mat)
+print(" ")
+print("Subtraction of above matrix :")
+print(np.subtract(first_mat,second_mat))
+
+#Multiplication of matrix using numpy
+import numpy as np
+import numpy.matlib
+print("First matrix : ")
+first_mat=np.mat('1,2,9;4,5,6;4,8,9')
+#first_mat=np.array([[1,2,9],[4,5,6],[4,8,9]])
+print(first_mat)
+print(" ")
+print("Second matrix : ")
+second_mat=np.mat('9,3,7;6,9,4;7,2,1')
+print(second_mat)
+print(" ");
+print("Multiplication of matrix :")
+print(np.multiply(first_mat,second_mat))
+
+
+#take matrix from user and add
+rows = int(input("Enter of "))

@@ -1,0 +1,17 @@
+from PIL import Image, ImageChops
+
+image_path1 = r"C:\Users\Public\linear.jpg"
+image_path2 = r"C:\Users\Public\another_image.jpg"  # Change this to your second image
+
+x = Image.open(image_path1)
+y = Image.open(image_path2)
+
+x.show()
+y.show()
+
+added_image = ImageChops.add(x, y)
+added_image.show()
+
+added_matrix = np.array(added_image)
+print("Resultant Matrix Representation:")
+print(added_matrix)

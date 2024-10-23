@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+
+s = [0.5 + 1j, 0.5 + 4j, 1.5 + 1j, 1.5 + 4j]
+X = [x.real for x in s]
+print(X)
+Y = [y.imag for y in s]
+print(Y)
+plt.plot(X, Y, '-go')
+plt.show()

@@ -1,0 +1,29 @@
+import numpy as np
+
+def rank_of_matrix(matrix):
+    return np.linalg.matrix_rank(matrix)
+
+def matinput(rows, cols):
+    matrix = []
+    print(f"Enter the elements of the {rows}x{cols} matrix (row by row):")
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            while True:
+                try:
+                    element = float(input(f"Element [{i+1}][{j+1}]: "))
+                    row.append(element)
+                    break
+                except ValueError:
+                    print("Please enter a valid number.")
+        matrix.append(row)
+    return np.array(matrix)
+
+rows = int(input("Enter the number of rows: "))
+cols = int(input("Enter the number of columns: "))
+matrix = matinput(rows, cols)
+print("Matrix:")
+print(matrix)
+
+rank = rank_of_matrix(matrix)
+print("Rank of the matrix:", rank)

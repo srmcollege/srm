@@ -1,0 +1,12 @@
+from PIL import Image, ImageChops, ImageFilter
+import matplotlib.image as img
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load the image
+x = Image.open(r"C:\Users\Public\linear.jpg")
+x.show()
+
+# Matrix representation
+c = np.array(x)
+print(c)
