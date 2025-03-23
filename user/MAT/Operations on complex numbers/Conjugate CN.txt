@@ -1,8 +1,0 @@
-# Define a complex number
-x = 1 + 3j
-
-# Find the conjugate
-conjugate_x = x.conjugate()
-
-# Print the result
-print("Conjugate of x:", conjugate_x)
